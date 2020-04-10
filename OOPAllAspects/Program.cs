@@ -97,7 +97,39 @@ namespace OOPAllAspects
             student3.Teacher = teacher1;
 
             Console.WriteLine("The teacher of " + student3.Name + " is " + student3.Teacher.Name);
-            
+
+            Console.WriteLine("-------------------------Composition------------------------------");
+            List<Student> schoolStudents = new List<Student>();
+            //schoolStudents.Add(student);
+            //schoolStudents.Add(student2);
+            //schoolStudents.Add(student3);
+            //schoolStudents.Add(student4);
+            //schoolStudents.Add(student5);
+            //schoolStudents.Add(student6);
+
+            List<Teacher> schoolTeachers = new List<Teacher>();
+            schoolTeachers.Add(teacher);
+            schoolTeachers.Add(teacher1);
+
+            School school = new School(schoolStudents, schoolTeachers);
+            school.Name = "Coding Bootcamp 10";
+
+            Console.WriteLine(school);
+
+
+            Console.WriteLine("----------------If we dont have toString()-------------------------");
+            // If we dont have stringbuilder
+            Console.WriteLine("The school's name is: " + school.Name);
+            Console.WriteLine("it's teachers are:");
+            foreach (Teacher schoolteacher in school.Teachers)
+            {
+                Console.WriteLine(schoolteacher.Name);
+            }
+            Console.WriteLine("it's students are:");
+            foreach (Student schoolstudent in school.Students)
+            {
+                Console.WriteLine(schoolstudent.Name);
+            }
         }
     }
 }
