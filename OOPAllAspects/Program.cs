@@ -78,6 +78,25 @@ namespace OOPAllAspects
             Console.WriteLine("---------------------------Association--------------------------------");
             teacher.AssignStudent(student3);
             student4.HireTeacher(teacher1);
+
+            Console.WriteLine("-------------------------Aggregation------------------------------");
+            // List<Student> georgeStudents = new List<Student>();
+
+            //georgeStudents.Add(student5);
+            //georgeStudents.Add(student6);
+
+            //teacher1.Students = georgeStudents;
+
+            teacher1.Students.Add(student5);
+            teacher1.Students.Add(student6);
+
+            foreach (Student s in teacher1.Students){
+                Console.WriteLine(s);
+            }
+
+            student3.Teacher = teacher1;
+
+            Console.WriteLine("The teacher of " + student3.Name + " is " + student3.Teacher.Name);
             
         }
     }

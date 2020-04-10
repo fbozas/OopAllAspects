@@ -8,10 +8,11 @@ namespace OOPAllAspects
 {
     class Teacher : Person
     {
-        public int age;
+        public List<Student> Students { get;}
+
         public Teacher(string name) : base(name)
         {
-
+            Students = new List<Student>();
         }
 
         public override string ToString()

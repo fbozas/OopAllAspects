@@ -8,6 +8,7 @@ namespace OOPAllAspects
 {
     class Student : Person
     {
+        public Teacher Teacher { get; set; }
         public Student(string name) : base(name)
         {
 
